@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Django Blog</title>
+    <title>Pendidikan Bahasa dan Sastra Indonesia UMS</title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
@@ -25,11 +25,70 @@
             {% else %}
                 <a href="{% url 'login' %}" class="top-menu">Login</a>
             {% endif %}
-
-            <h1><a href="/">Django Blog</a></h1>
+            
+            {% load static %}
+            <div class="header-prodi">
+                <img src="{% static 'img/Resmi_Logo_UMS.webp' %}" alt="Banner PBSI" class="logo-ums">
+                <h1><a href="/"></a>Pendidikan Bahasa dan Sastra Indonesia <br>
+                <span class="latin">Universitas Muhammadiyah Surakarta</span> </h1>
+            </div>
         </div>
     </header>
 
+    <div class="home">
+        {% load static %}
+        <img src="{% static 'img/Home_page.jpg' %}" alt="Homepage">
+
+        <div class="overlay top">
+            <p>Selamat Datang di<br>Laman Resmi</p>
+        </div>
+        <div class="overlay bottom">
+            <p>PENDIDIKAN BAHASA DAN SASTRA INDONESIA</p>
+        </div>
+    </div>
+
+<section class="about-section">
+    <div class="about-container">
+
+        <div class="about-text">
+            <p class="about-subtitle">Profil Program Studi</p>
+
+            <h2 class="about-title">
+                PENDIDIKAN BAHASA DAN SASTRA INDONESIA
+            </h2>
+
+            <p class="about-description">
+                Program Studi Pendidikan Bahasa dan Sastra Indonesia, FKIP, UMS adalah,
+                <strong>
+                    "Mengembangkan pendidikan bahasa dan sastra Indonesia yang adaptif-transformatif,
+                    secara saintifik dan profetik berlandaskan linguistik sistemik fungsional
+                    dan estetika sastra untuk menghasilkan lulusan yang memiliki kecakapan hidup abad 21".
+                </strong>
+            </p>
+
+            <a href="#" class="btn-about">
+                Selengkapnya →
+            </a>
+        </div>
+
+        <div class="about-video">
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/mv2UrN1q6nI"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="berita-section">
+    <div class="berita-title">
+        <h1>BERITA SEPUTAR PROGRAM STUDI</h1>
+    </div>
+</section>
     <main class="container">
         <div class="row">
             <div class="col">
