@@ -1,12 +1,97 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for post in posts %}
-        <article class="post">
-            <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>Published: {{ post.published_date }}</p>
-            <p>{{ post.text|linebreaksbr }}</p>
-            <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
-        </article>
-    {% endfor %}
+<!-- ===== HERO (FULL WIDTH) ===== -->
+<div class="home">
+    {% load static %}
+    <img src="{% static 'img/Home_page.jpg' %}" alt="Homepage">
+
+    <div class="overlay top">
+        <p>Selamat Datang di<br>Laman Resmi</p>
+    </div>
+    <div class="overlay bottom">
+        <p>PENDIDIKAN BAHASA DAN SASTRA INDONESIA</p>
+    </div>
+</div>
+
+<!-- ===== ABOUT (FULL WIDTH) ===== -->
+<section class="about-section">
+    <div class="about-container">
+
+        <div class="about-text">
+            <p class="about-subtitle">Profil Program Studi</p>
+
+            <h2 class="about-title">
+                PENDIDIKAN BAHASA DAN SASTRA INDONESIA
+            </h2>
+
+            <p class="about-description">
+                Program Studi Pendidikan Bahasa dan Sastra Indonesia, FKIP, UMS adalah,
+                <strong>
+                    "Mengembangkan pendidikan bahasa dan sastra Indonesia yang adaptif-transformatif,
+                    secara saintifik dan profetik berlandaskan linguistik sistemik fungsional
+                    dan estetika sastra untuk menghasilkan lulusan yang memiliki kecakapan hidup abad 21".
+                </strong>
+            </p>
+
+            <a href="#" class="btn-about">
+                Selengkapnya →
+            </a>
+        </div>
+
+        <div class="about-video">
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/mv2UrN1q6nI"
+                    frameborder="0"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===== JUDUL BERITA (FULL WIDTH) ===== -->
+<section class="berita-section">
+    <div class="berita-title">
+        <h1>BERITA SEPUTAR PROGRAM STUDI</h1>
+    </div>
+</section>
+
+<!-- ===== BERITA (BOOTSTRAP SAJA) ===== -->
+<!-- Kontainer untuk Card Postingan -->
+<div class="container">
+    <div class="row">
+        <!-- Loop Postingan -->
+        {% for post in posts %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <!-- Tampilkan gambar jika ada -->
+                {% if post.header_image %}
+                <img src="{{ post.header_image.url }}" class="cardimg-top" alt="{{ post.title }}" style="height: 200px; object-fit: cover;">
+                {% else %}
+                <!-- Placeholder jika tidak ada gambar -->
+                <img src="https://placehold.co/600x400/eeeeee/cccccc?text=No+Image"
+                     class="card-img-top" alt="No Image" style="height: 200px; objectfit: cover;">
+                {% endif %}
+
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">
+                        <!-- Gunakan filter |safe dan |truncatewords -->
+                        {{ post.text|safe|truncatewords:20 }}
+                    </p>
+                    <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-primary mt-auto">Baca Selengkapnya</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Dipublikasi pada {{ post.published_date }}
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Belum ada postingan.</p>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

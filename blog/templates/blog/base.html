@@ -6,6 +6,7 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/blog.css' %}">
@@ -35,67 +36,62 @@
         </div>
     </header>
 
-    <div class="home">
-        {% load static %}
-        <img src="{% static 'img/Home_page.jpg' %}" alt="Homepage">
+    {% block content %}
+    {% endblock %}
+    
+    <footer class="footer-ums">
+        <div class="container-footer-grid">
 
-        <div class="overlay top">
-            <p>Selamat Datang di<br>Laman Resmi</p>
-        </div>
-        <div class="overlay bottom">
-            <p>PENDIDIKAN BAHASA DAN SASTRA INDONESIA</p>
-        </div>
-    </div>
-
-<section class="about-section">
-    <div class="about-container">
-
-        <div class="about-text">
-            <p class="about-subtitle">Profil Program Studi</p>
-
-            <h2 class="about-title">
-                PENDIDIKAN BAHASA DAN SASTRA INDONESIA
-            </h2>
-
-            <p class="about-description">
-                Program Studi Pendidikan Bahasa dan Sastra Indonesia, FKIP, UMS adalah,
-                <strong>
-                    "Mengembangkan pendidikan bahasa dan sastra Indonesia yang adaptif-transformatif,
-                    secara saintifik dan profetik berlandaskan linguistik sistemik fungsional
-                    dan estetika sastra untuk menghasilkan lulusan yang memiliki kecakapan hidup abad 21".
-                </strong>
-            </p>
-
-            <a href="#" class="btn-about">
-                Selengkapnya →
-            </a>
-        </div>
-
-        <div class="about-video">
-            <div class="video-wrapper">
-                <iframe
-                    src="https://www.youtube-nocookie.com/embed/mv2UrN1q6nI"
-                    frameborder="0"
-                    allowfullscreen>
-                </iframe>
+            <!-- LOGO & NAMA -->
+            <div class="footer-brand">
+                <img src="{% static 'img/Logo-UMS-2.webp' %}" alt="UMS Logo">
             </div>
-        </div>
 
-    </div>
-</section>
-
-<section class="berita-section">
-    <div class="berita-title">
-        <h1>BERITA SEPUTAR PROGRAM STUDI</h1>
-    </div>
-</section>
-    <main class="container">
-        <div class="row">
-            <div class="col">
-                {% block content %}
-                {% endblock %}
+            <!-- TENTANG KAMI -->
+            <div class="footer-col">
+                <h4>TENTANG<br>KAMI</h4>
+                <ul>
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Visi Misi</a></li>
+                    <li><a href="#">Rencana Strategis</a></li>
+                    <li><a href="#">Struktur Organisasi</a></li>
+                    <li><a href="#">Tenaga Kependidikan</a></li>
+                </ul>
             </div>
+
+            <!-- LAYANAN -->
+            <div class="footer-col">
+                <h4>LAYANAN</h4>
+                <ul>
+                    <li><a href="#">MyAkademik UMS</a></li>
+                    <li><a href="#">Star Parent</a></li>
+                    <li><a href="#">LMS SPADA UMS</a></li>
+                    <li><a href="#">SiPRESMA</a></li>
+                </ul>
+            </div>
+
+            <!-- ALAMAT -->
+            <div class="footer-col">
+                <h4>ALAMAT</h4>
+                <p>
+                    Gedung Hall Masjid Fadlurahman<br>
+                    Sayap Utara Kampus 1 FKIP UMS
+                </p>
+                <p>
+                    Jl. Ahmad Yani, Pabelan, Kartasura,<br>
+                    Sukoharjo 57169, Jawa Tengah, Indonesia
+                </p>
+                <p>Telp.: (0271) 717417 ext. 2131</p>
+
+                <div class="footer-social">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                </div>
+            </div>
+
         </div>
-    </main>
+    </footer>
+
 </body>
 </html>

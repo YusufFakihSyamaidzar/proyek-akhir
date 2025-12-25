@@ -85,7 +85,7 @@ h4 {
 
 /* ABOUT SECTION */
 .about-section {
-    padding: 80px 70px 80px 90px;
+    padding: 70px 70px 70px 85px;
     background-color: #ffffff;
 }
 
@@ -153,13 +153,26 @@ h4 {
 
 /* PAGE BERITA */
 .berita-section {
-    padding: 80px 70px 80px 90px;
+    padding: 80px 70px 20px 75px;
 }
 
 .berita-title h1 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
     font-size: 25px;
     font-weight: bold;
     line-height: 1.1;
+}
+
+.berita-title h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 150px;
+    height: 3px;
+    background-color: #1b222f;
 }
 
 .date {
@@ -209,4 +222,82 @@ h4 {
 .btn-secondary:hover {
     color: #FFFFFF;
     background-color: #C25100;
+}
+
+/* FOOTER */
+.footer-ums {
+    background: #002e8a;
+    color: #ffffff;
+    padding: 60px 80px;
+    display: inline-flexbox;
+}
+
+.container-footer-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+/* BRAND */
+.footer-brand img {
+    width: 350px;
+    height: auto;
+    padding: 40px 0;
+}
+
+/* KOLOM */
+.footer-col h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ALAMAT */
+.footer-col p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+/* SOSIAL MEDIA */
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: #ffffff;
+    color: #353773;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.footer-social a:hover {
+    background: #f0f0f0;
 }
