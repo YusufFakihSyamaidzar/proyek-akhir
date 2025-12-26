@@ -139,8 +139,9 @@ h4 {
 /* VIDEO */
 .video-wrapper {
     position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* 16:9 */
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
 }
 
 .video-wrapper iframe {
@@ -188,13 +189,20 @@ h4 {
     width: 100%;
 }
 
-.top-menu,
-.top-menu:hover,
-.top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 26pt;
+.top-menu {
     margin-right: 20px;
+}
+
+.icon-btn {
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+    color: #f5b700;
 }
 
 .post {
