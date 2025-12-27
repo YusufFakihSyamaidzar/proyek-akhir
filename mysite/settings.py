@@ -126,5 +126,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 
+DEBUG = False
+
+ALLOWED_HOSTS = ['yusuffakihB7.pythonanywhere.com']
+
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
