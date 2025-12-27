@@ -49,6 +49,20 @@ def post_edit(request, pk):
 
     return render(request, 'blog/post_edit.html', {'form': form})
 
+@login_required
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+
+    # opsional: batasi hanya author
+    if post.author != request.user:
+        return redirect('post_list')
+
+    if request.method == "POST":
+        post.delete()
+        return redirect('post_list')
+
+    return render(request, 'blog/post_confirm_delete.html', {'post': post})
+
 def custom_logout(request):
     logout(request)
     return redirect('/')
@@ -71,3 +85,6 @@ def add_comment_to_post(request, pk):
         'blog/add_comment_to_post.html',
         {'form': form}
     )
+
+def about(request):
+    return render(request, 'blog/post_visimisi.html')

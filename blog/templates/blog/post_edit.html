@@ -1,6 +1,7 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div class="post-container">
     {{ form.media }}
     <h2>New post</h2>
     <form method="POST" class="post-form" enctype="multipart/form-data">
@@ -9,4 +10,5 @@
 
         <button type="submit" class="save btn btn-secondary">Save</button>
     </form>
+</div>
 {% endblock %}

@@ -34,7 +34,7 @@
                 </strong>
             </p>
 
-            <a href="#" class="btn-about">
+            <a href="{% url 'post_visimisi' %}" class="btn-about">
                 Selengkapnya →
             </a>
         </div>
@@ -90,5 +90,19 @@
         {% endfor %}
     </div>
 </div>
+
+<div class="dress">
+    <img src="{% static 'img/mhs-perempuan.jpg' %}" alt="pakaian mahasiswa perempuan">
+    <img src="{% static 'img/mhs-lakilaki.webp' %}" alt="pakaian mahasiswa laki-laki">
+</div>
+
+<!-- GOOGLE MAPS SECTION -->
+<section class="maps-section">
+    <iframe
+        src="https://www.google.com/maps?q=Universitas%20Muhammadiyah%20Surakarta&output=embed"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</section>
 
 {% endblock %}
